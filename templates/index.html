@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Overview</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+  
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12 jumbotron text-center">
+            <h1 class="text-primary">Mission to Mars</h1>
+            <a class="btn btn-danger" style = "margin:6px" href="/scrape"><h3>Retrieve Data</h3></button></a>
+            </div>
+        </div>
+        
+          <div class="col-md-12"></div>
+          <div class="panel panel-danger">
+            <div class="panel-heading">
+              <h3 class="panel-title">News from Mars</h3>
+            </div>
+            <div id="news" class="panel-body"><h4><strong>{{mars_data.newsTitle}}</strong></h4> <h5>{{mars_data.newsTag}}</h5></div>
+          </div>
+          
+          <div class="row"></div>        
+
+          <div class="panel panel-danger">
+          <div class="panel-heading">
+              <h3 class="panel-title">Mars Weather Report</h3>
+            </div>
+            <div id="tweet" class="panel-body"><h5>{{mars_data.weatherReport}}</h5></div>
+          </div>
+  
+          <div class="row"></div>  
+        
+          <div id="mars_img" class="col-md-8">
+            <h1 class = "text-danger text-center"><strong>Featured Mars Image</strong></h1>
+              <img src = {{mars_data.jplSpaceImage}} height = "100%" width="100%">  
+          </div>
+              <div class="col-md-4">
+                <div class="panel panel-danger">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Mars Profile</h3>
+                </div>
+                  <div id="mars_df" class="panel-body">{{mars_data.marsProfile | safe}}</div>
+                </div> 
+              </div>      
+          </div>  
+
+      <br />
+      <br />
+
+      <div id="mars_img" class="col-md-12"></div>
+        <h1 class = "text-danger text-center"><strong>Mars Hemispheres</strong></h1>
+      <div class = container> 
+        <div class="row"></div>
+        <div id="hemispheres">
+          <div class="col-md-6 text-center">
+              <img src={{ mars_data.hemispheres[0]["img_url"] }} alt="hemisphere1" style="width:100%">
+              <h3>{{ mars_data.hemispheres[0]["title"] }}</h3>
+          </div>
+          <div class="col-md-6 text-center">
+              <img src={{ mars_data.hemispheres[1]["img_url"] }} alt="hemisphere2" style="width:100%">
+              <h3>{{ mars_data.hemispheres[1]["title"] }}</h3>
+          </div>
+          <div class="col-md-6 text-center">
+              <img src={{ mars_data.hemispheres[2]["img_url"] }} alt="hemisphere3" style="width:100%">
+              <h3>{{ mars_data.hemispheres[2]["title"] }}</h3>
+          </div>
+          <div class="col-md-6 text-center">
+              <img src={{ mars_data.hemispheres[3]["img_url"] }} alt="hemisphere4" style="width:100%">
+              <h3>{{ mars_data.hemispheres[3]["title"] }}</h3>
+          </div>
+        </div>
+      </div>
+  </body>
+
+</html>
