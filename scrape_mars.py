@@ -1,4 +1,5 @@
 # Dependencies
+import time
 import os
 import pandas as pd
 from bs4 import BeautifulSoup as bs
@@ -41,6 +42,8 @@ def scrape_info():
 
     
     ##### VISIT JPL URL FOR MARS SPACE IMAGE #####
+    #wait for 5 seconds to run scrape
+    time.sleep(5)
     image_url = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
     browser.visit(image_url)
 
@@ -65,6 +68,8 @@ def scrape_info():
 
     
     ##### VISIT FOR TWITTER FOR WEATHER #####
+    #wait for 5 seconds to run scrape
+    time.sleep(5)
     weather_url = 'https://twitter.com/marswxreport?lang=en'
     browser.visit(weather_url)
 
@@ -83,6 +88,8 @@ def scrape_info():
     
     
     ##### VISIT MARS FACTS URL FOR PROFILE #####
+    #wait for 5 seconds to run scrape
+    time.sleep(5)
     # The assignment suggested we scrape the table from:
     profile_url = 'https://space-facts.com/mars/'
     # however, the site was intermittently down therefore utilized a profile table from another site.
@@ -107,7 +114,9 @@ def scrape_info():
     mars_data_dict['marsProfile'] = htmlProfileTable    
 
 
-    ##### VISIT ASTROGEOLOGY URL FOR THE HEMISPHERES ##### 
+    ##### VISIT ASTROGEOLOGY URL FOR THE HEMISPHERES #####
+    #wait for 5 seconds to run scrape 
+    time.sleep(5)
     # Visit Astrogeology website for the hemispheres 
     hemispheres_url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
     browser.visit(hemispheres_url)
